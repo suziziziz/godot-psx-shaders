@@ -1,11 +1,10 @@
 shader_type spatial; 
-render_mode skip_vertex_transform, cull_disabled, diffuse_lambert_wrap, specular_phong, ambient_light_disabled;
+render_mode skip_vertex_transform, diffuse_lambert_wrap, specular_phong, ambient_light_disabled, unshaded;
 
 uniform vec4 color : hint_color;
 uniform sampler2D albedoTex : hint_albedo;
-uniform float alpha_scissor_threshold;
 uniform float specular_intensity : hint_range(0, 1);
-uniform float resolution = 256;
+uniform float resolution = 48;
 uniform float cull_distance = 45;
 uniform vec2 uv_scale = vec2(1.0, 1.0);
 uniform vec2 uv_offset = vec2(.0, .0);
@@ -32,6 +31,4 @@ void fragment() {
 	
 	ALBEDO = tex.rgb * color.rgb;
 	SPECULAR = specular_intensity;
-	ALPHA = tex.a;
-	ALPHA_SCISSOR = alpha_scissor_threshold;
 }
