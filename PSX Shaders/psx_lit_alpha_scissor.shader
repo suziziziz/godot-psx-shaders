@@ -1,6 +1,7 @@
 shader_type spatial; 
 render_mode skip_vertex_transform, cull_disabled, diffuse_lambert_wrap, specular_phong, ambient_light_disabled;
 
+// Testing if submodules will save
 uniform vec4 color : hint_color;
 uniform sampler2D albedoTex : hint_albedo;
 uniform float alpha_scissor_threshold;
